@@ -1,6 +1,7 @@
 package com.yc.damai.po;
 
 import java.sql.Timestamp;
+import java.util.List;
 
 public class DmProduct {
     private Integer id;
@@ -20,8 +21,18 @@ public class DmProduct {
     private Timestamp createtime;
 
     private Integer cid;
+    private List<DmProduct> pList;
+    
 
-    public Integer getId() {
+    public List<DmProduct> getpList() {
+		return pList;
+	}
+
+	public void setpList(List<DmProduct> pList) {
+		this.pList = pList;
+	}
+
+	public Integer getId() {
         return id;
     }
 

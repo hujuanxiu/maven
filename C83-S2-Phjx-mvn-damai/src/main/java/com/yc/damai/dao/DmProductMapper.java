@@ -42,7 +42,8 @@ public interface DmProductMapper {
 	@ResultMap("rmdp")
 	DmProduct selectById(int id);
 	
-//	List<DmProduct> selectById(int id);
+	List<DmProduct> selectByOrder(int id);
+	
 	
 	List<DmProduct> selectByObj(DmProduct dp);
 	

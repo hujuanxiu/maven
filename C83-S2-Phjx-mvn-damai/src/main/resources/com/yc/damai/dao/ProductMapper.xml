@@ -22,10 +22,31 @@
        <result column="shop_price" property="shopPrice" />
        <result column="is_hot" property="isHot" />
    </resultMap> -->
+   
+   <resultMap id="rmdo" type="com.yc.damai.po.DmOrders">
+        <id column="id" property="id"/>
+        <collection property="pList" ofType="com.yc.damai.po.DmProduct">
+            <id column="id" property="id"/>
+            <result column="market_price" property="marketPrice" />
+            <result column="shop_price" property="shopPrice" />
+            <result column="is_hot" property="isHot" />
+        </collection>
+  </resultMap>
 
 <select id="selectByCid" resultMap="rmdp">
     select * from dm_product where cid=#{id}
   </select>
+  
+  <select id="selectByOrder" resultMap="rmdo">
+   SELECT 
+      c.*
+  FROM dm_orders a
+  LEFT OUTER JOIN dm_orderitem b
+    ON b.oid = a.id
+  LEFT OUTER JOIN dm_product c
+    ON c.id = b.pid
+		where a.id=#{id};
+  </select >
 
 
 <!-- id是该select标签的唯一标识

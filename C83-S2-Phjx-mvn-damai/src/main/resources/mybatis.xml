@@ -57,11 +57,11 @@
     <mapper resource="com/yc/damai/dao/ProductMapper.xml"/>
     <!-- <mapper resource="com/yc/damai/dao/CategoryMapper.xml"/> -->
     <mapper resource="com/yc/damai/dao/OrderItemMapper.xml"/>
-  <!--    <mapper resource="com/yc/damai/dao/OrdersMapper.xml"/> -->
+     <mapper resource="com/yc/damai/dao/OrdersMapper.xml"/>
    <!-- 注册接口(无xml) -->
-   <mapper class="com.yc.damai.dao.DmOrdersMapper"/>
+  <!--  <mapper class="com.yc.damai.dao.DmOrdersMapper"/>
    <mapper class="com.yc.damai.dao.DmCategoryMapper"/>
-   
+    -->
    <!-- 自动扫描包下的mapper接口  xml也会被扫描到-->
    <!-- <package name="com.yc.damai.dao"/> -->
   </mappers>
