@@ -53,6 +53,7 @@
   
   <!-- 映射文件配置 -->
   <mappers>
- 
+  
+      <package name="com.yc.favorite.dao"/>
   </mappers>
 </configuration>

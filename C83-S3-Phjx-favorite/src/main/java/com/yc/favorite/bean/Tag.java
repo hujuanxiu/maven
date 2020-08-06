@@ -9,6 +9,14 @@ public class Tag implements Serializable{
 	private Integer tid;
 	private String tname;
 	private String tcount;
+	private Integer fid;
+	
+	public Integer getFid() {
+		return fid;
+	}
+	public void setFid(Integer fid) {
+		this.fid = fid;
+	}
 	public Integer getTid() {
 		return tid;
 	}
