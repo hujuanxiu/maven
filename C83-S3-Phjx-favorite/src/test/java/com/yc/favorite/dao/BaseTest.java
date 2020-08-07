@@ -74,5 +74,16 @@ public class BaseTest {
 		fm.selectByTid(2);
 	}
 	
+	@Test
+	public void test5() {
+		FavoriteBiz fb=new FavoriteBiz();
+		Favorite f=new Favorite();
+		f.setFlabel("百度");
+		f.setFurl("baidu.com");
+		f.setFdesc("搜索网站");
+		f.setFtags("");
+		fb.addFavorite(f);
+	}
+	
 	
 }

@@ -9,4 +9,24 @@
     <welcome-file>default.htm</welcome-file>
     <welcome-file>default.jsp</welcome-file>
   </welcome-file-list>
+  <servlet>
+    <description></description>
+    <display-name>QueryTagsServlet</display-name>
+    <servlet-name>QueryTagsServlet</servlet-name>
+    <servlet-class>com.yc.favorite.web.QueryTagsServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>QueryTagsServlet</servlet-name>
+    <url-pattern>/queryTags.do</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>FavoriteServlet</display-name>
+    <servlet-name>FavoriteServlet</servlet-name>
+    <servlet-class>com.yc.favorite.web.FavoriteServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>FavoriteServlet</servlet-name>
+    <url-pattern>/FavoriteServlet</url-pattern>
+  </servlet-mapping>
 </web-app>

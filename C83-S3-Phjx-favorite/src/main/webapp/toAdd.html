@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>添加网站</title>
+<script type="text/javascript" src="js/vue.min.js"></script>
+<script type="text/javascript" src="js/axios.min.js"></script>
+<script type="text/javascript" src="js/ajax.js"></script>
+</head>
+<body>
+<div id="app" style="text-align:center;">
+请输入网站名称:<input v-model="flabel" name="flabel" id="flabel"/><br>
+请输入网站地址:<input v-model="furl" name="furl" id="furl"/><br/>
+请输入网站描述:<input v-model="fdesc" name="fdesc" id="fdesc"/><br/>
+请输入分类信息:<input v-model="ftags" name="ftags" id="ftags"/><br/>
+<button @click="save">保存</button>
+</div>
+
+<script type="text/javascript">
+     var vue=new Vue({
+    	 el:"#app",
+    	 data:{
+    		 flabel:null,
+    		 furl:null,
+    		 fdesc:null,
+    		 ftags:null 
+    	 },
+    	 methods:{
+    		 save(){
+    			 var url="fav.do?";
+    			 url+="flabel="+this.flabel;
+    			 url+="&furl="+this.furl;
+    			 url+="&fdesc="+this.fdesc;
+    			 url+="&ftags="+this.ftags;
+    			 get(url,function(data){
+    				alert(data);
+    				if(data=="添加成功"){
+    					location.href="index.html";
+    				}
+    			 });
+    			 
+    		 }
+ 
+    	 }
+    	
+     });
+</script>
+
+</body>
+</html>
