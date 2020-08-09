@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>云图</title>
+<script type="text/javascript" src="js/vue.min.js"></script>
+<script type="text/javascript" src="js/axios.min.js"></script>
+ <style>
+
+     body
+      {
+         width:340px;
+         font-size:20px;
+         height :800px;
+      }
+
+     table
+     {
+         border-collapse :collapse ;
+     }
+
+     th,td
+     {
+         width:100px;
+         height:40px;
+         border :1px solid black;        
+         text-align :center;
+     }
+     h4{
+         text-align :center;
+     }
+    </style>
+</head>
+<body>
+<h4 >云图信息</h4>
+<table id="app">
+    <tr>
+      <td>分类</td>
+      <td>数量</td>
+    </tr>
+    
+    <tr v-for="t in tags" >
+
+      <td v-if="t.tcount==2" style="font-weight: 900;">{{t.tname}}</td>
+
+      <td>{{t.tcount}}</td>
+    </tr>
+</table>
+   
+    <script type="text/javascript">
+	   var vue=new Vue({
+		   el:"#app",
+		   data:{
+			   //左边的分类
+			   tags:[],			
+		   },
+		   //启动时查询所有的链接
+		   created: function(){
+			   axios.get("queryTags.do").then(res=>{
+				   this.tags=res.data;
+			   });
+		   },
+		   methods:{
+			  
+		   }
+	   });
+	</script>
+
+</body>
+</html>

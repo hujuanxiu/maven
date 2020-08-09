@@ -27,4 +27,7 @@ public interface TagMapper {
 	
 	@Select("select * from tag")
 	List<Tag> selectAll();
+	
+	
+	
 }

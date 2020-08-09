@@ -24,7 +24,6 @@ public class QueryTagsServlet extends HttpServlet {
 		response.setCharacterEncoding("utf-8");
 		//设置请求的字符集
 		request.setCharacterEncoding("utf-8");
-		
 		SqlSession session=MyBatisHelper.openSession();
 		TagMapper tm=session.getMapper(TagMapper.class);
 		Gson gson=new Gson();

@@ -56,9 +56,9 @@
 					</tr>
 						
 				
-					<tr>
+					<tr >
 						<td>
-							<a style="font-weight:bold;" href="fav.do?op=toCloud">云图</a>
+							<a style="font-weight:bold;" href="#"  @click="lookTag(0)">云图</a>
 						</td>
 					</tr>
 				</table>
@@ -109,6 +109,11 @@
 				   axios.get("queryFavs.do?tid="+tid).then(res=>{
 					   this.favs=res.data;
 				   });
+			   },
+			   lookTag(){
+				   axios.get("queryTags.do").then(res=>{
+					   this.tags=res.data;
+				   }); 
 			   }
 		   }
 	   });
