@@ -13,7 +13,26 @@ public class Person {
 	//绰号
 	private String alisa;
 	
+	private Person friend;
 	
+	
+	public Person() {
+		
+	}
+	
+	public Person(String name, int age, String alisa) {
+		super();
+		this.name = name;
+		this.age = age;
+		this.alisa = alisa;
+	}
+	
+	public Person getFriend() {
+		return friend;
+	}
+	public void setFriend(Person friend) {
+		this.friend = friend;
+	}
 	public List<String> getKilleds() {
 		return killeds;
 	}
