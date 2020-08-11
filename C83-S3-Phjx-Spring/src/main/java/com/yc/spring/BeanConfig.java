@@ -29,15 +29,13 @@ public class BeanConfig {
 	}
 	
 	
-	@Bean(name = "odao")
-	public OracleUserDao getOracleUserDao() {
-		return new OracleUserDao();
-	}
-	
-	@Bean(name = "mdao")
-	public MySQLUserDao getMySQLUserDao() {
-		return new MySQLUserDao();
-	}
+	/*
+	 * @Bean(name = "odao") public OracleUserDao getOracleUserDao() { return new
+	 * OracleUserDao(); }
+	 * 
+	 * @Bean(name = "mdao") public MySQLUserDao getMySQLUserDao() { return new
+	 * MySQLUserDao(); }
+	 */
 	
 	@Bean(name = "p1")
 	public Person Person1() {
