@@ -8,7 +8,8 @@ public class MySQLUserDao implements UserDao{
 	
 	public int selectUserId(String name) {
 		System.out.println("Mysql user dao");
-		return 0;
+		int i=1/0;
+		return 85;
 	}
 
 }

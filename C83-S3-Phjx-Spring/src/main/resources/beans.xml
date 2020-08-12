@@ -4,7 +4,7 @@
     xsi:schemaLocation="http://www.springframework.org/schema/beans
         https://www.springframework.org/schema/beans/spring-beans.xsd">
 
-    <bean id="hello" class="com.yc.spring.Hello">  
+    <!-- <bean id="hello" class="com.yc.spring.Hello">  
     </bean>
     
     <bean id="mdao"  class="com.yc.spring.dao.MySQLUserDao">  
@@ -12,7 +12,7 @@
     
     <bean id="odao" class="com.yc.spring.dao.OracleUserDao">  
     </bean>
-    
+     -->
     
     <!-- 
     Spring 依赖注入(DI)注入的方式有三种
