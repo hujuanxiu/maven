@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringRunner;
 
+import com.yc.spring.bean.Person;
 import com.yc.spring.dao.MySQLUserDao;
 import com.yc.spring.dao.OracleUserDao;
 import com.yc.spring.dao.UserDao;
@@ -22,6 +23,10 @@ public class AOPTest {
 	@Resource
 	@Qualifier("odao")
 	private UserDao odao;
+	 @Resource 
+	 private Person person;
+	@Resource
+	private Hello hello;
 	
 	
 	@Test
@@ -31,5 +36,13 @@ public class AOPTest {
 		System.out.println("=======2=========");
 		odao.selectUserId("");
 		System.out.println("=======3=========");
+	}
+	
+	@Test
+	public void test2() {
+		System.out.println(mdao);
+		System.out.println(odao);
+		System.out.println(person);
+		System.out.println(hello);
 	}
 }

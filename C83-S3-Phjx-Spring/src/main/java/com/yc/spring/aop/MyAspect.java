@@ -73,4 +73,9 @@ public class MyAspect {
 	}
 	
 	
+	@After("execution( * com.yc.spring.Hello.*(..))")
+	public void afterForHello(JoinPoint jp) {
+		System.out.println("=========Hello后置增强==========");
+	}
+	
 }

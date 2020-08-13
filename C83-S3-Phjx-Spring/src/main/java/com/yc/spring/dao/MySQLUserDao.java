@@ -2,6 +2,8 @@ package com.yc.spring.dao;
 
 import org.springframework.stereotype.Repository;
 
+import com.yc.spring.bean.Person;
+
 @Repository("mdao")
 public class MySQLUserDao implements UserDao{
 
@@ -10,6 +12,12 @@ public class MySQLUserDao implements UserDao{
 		System.out.println("Mysql user dao");
 		int i=1/0;
 		return 85;
+	}
+
+	@Override
+	public int insert(Person person) {
+		// TODO Auto-generated method stub
+		return 0;
 	}
 
 }
