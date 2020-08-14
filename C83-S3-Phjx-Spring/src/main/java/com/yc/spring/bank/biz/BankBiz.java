@@ -1,8 +1,13 @@
 package com.yc.spring.bank.biz;
 
+import java.io.IOException;
+import java.sql.SQLException;
+
 import javax.annotation.Resource;
 
+import org.springframework.dao.DataAccessResourceFailureException;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import com.yc.spring.bank.dao.AccountDao;
 import com.yc.spring.bank.dao.OpercordDao;
@@ -17,6 +22,7 @@ import com.yc.spring.bank.dao.OpercordDao;
  * 
  */
 @Service
+@Transactional(rollbackFor = {IOException.class ,SQLException.class})
 public class BankBiz {
 
 	@Resource
@@ -42,13 +48,22 @@ public class BankBiz {
 	}
 	
 	//存取款
-	public void save(int id,double money) {
+	 @Transactional(rollbackFor = {BizException.class}) 
+	public void save(int id,double money) throws BizException {
 		//省略参数校验
 		aDao.update(id, money);
+		/* try { */
+		    if(money > 999) {
+			   throw new BizException("存取款金额不能大于999");
+		    }
+		/*}catch (BizException e) {
+			//将该编译期异常转化为运行期异常
+			throw new DataAccessResourceFailureException("异常转型",e);
+		}*/
 		oDao.insert(id, money);
 	}
 	
-	public void transfer(int id1,int id2,double money) {
+	public void transfer(int id1,int id2,double money) throws BizException {
 		save(id1, -money);
 		save(id2, money);
 	}

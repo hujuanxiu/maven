@@ -1,11 +1,18 @@
 package com.yc.cinema.biz;
 
+import javax.annotation.Resource;
+
+import org.springframework.stereotype.Service;
+
 import com.yc.cinema.dao.HallDao;
 
+@Service
 public class HallBiz {
 	
+	@Resource
 	private MovieBiz mbiz;
 	
+	@Resource
 	private HallDao hdao;
 
 	public MovieBiz getMbiz() {

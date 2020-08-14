@@ -7,4 +7,5 @@ import org.springframework.context.annotation.Configuration;
 @ComponentScan("com.yc.cinema")  //扫包
 public class BeanConfig {
 
+	
 }

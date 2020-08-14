@@ -18,10 +18,10 @@ import com.yc.cinema.web.UserAction;
 //@ContextConfiguration("beans.xml")  xml方式
 public class BaseTest {
 
-	//@Resource
+	@Resource
 	private IndexAction iAction;
 
-	//@Resource
+	@Resource
 	private MovieAction mAction;
 
 	@Resource
