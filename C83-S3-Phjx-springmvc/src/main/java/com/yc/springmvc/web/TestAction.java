@@ -19,7 +19,7 @@ import org.springframework.web.bind.annotation.SessionAttributes;
 
 import com.yc.damai.po.DmUser;
 
-@RestController
+@RestController //对于页面的内容 @Controller 对应着一个页面html,css
 @RequestMapping("user")    //可以设置共同的副目录
 /**
  * @SessionAttributes 与 @RestController有冲突 所以屏蔽
