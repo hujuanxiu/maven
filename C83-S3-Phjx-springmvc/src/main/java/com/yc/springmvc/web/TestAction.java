@@ -8,16 +8,21 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+
+import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.CookieValue;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestHeader;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.bind.annotation.SessionAttribute;
 import org.springframework.web.bind.annotation.SessionAttributes;
 
 import com.yc.damai.po.DmUser;
+
+
 
 @RestController //对于页面的内容 @Controller 对应着一个页面html,css
 @RequestMapping("user")    //可以设置共同的副目录
@@ -29,6 +34,7 @@ import com.yc.damai.po.DmUser;
 //@SessionAttributes(names = "loginedUser",types = Date.class)
 public class TestAction {
 
+	
 	@RequestMapping("?/add")
 	//user/a/add   user/b/add  ?表示任意一个字符
 	public String add() {
