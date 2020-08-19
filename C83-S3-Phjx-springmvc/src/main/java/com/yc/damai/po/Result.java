@@ -41,10 +41,5 @@ public class Result {
 		this.data = data;
 	}
 
-	@Override
-	public String toString() {
-		return "Result [code=" + code + ", msg=" + msg + ", data=" + data + "]";
-	}
-
 	
 }

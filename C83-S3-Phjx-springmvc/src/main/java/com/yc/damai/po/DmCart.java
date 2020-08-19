@@ -40,10 +40,4 @@ public class DmCart {
     public void setCount(Integer count) {
         this.count = count;
     }
-
-	@Override
-	public String toString() {
-		return "DmCart [id=" + id + ", uid=" + uid + ", pid=" + pid + ", count=" + count + "]";
-	}
-    
 }
