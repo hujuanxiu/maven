@@ -35,6 +35,11 @@ logging:
 mail:
   fromMail: 
      addr: 1532131020@qq.com
+     
+     
+mybatis:
+  configuration:
+    map-underscore-to-camel-case: true  # 开启驼峰命名
       
 
 

@@ -39,4 +39,16 @@ public class IndexAction {
 		return "index";
 		//springmvc-->会将返回视图名 前：template+视图名+后缀
 	}
+	
+	@GetMapping("detail.do")
+	public String detail(Model m,int id) {
+		
+		//查询指定id商品
+		DmProduct dp=pm.selectById(id);
+		
+		//推送给页面
+		m.addAttribute("dp",dp);
+		
+		return "detail";
+	}
 }
