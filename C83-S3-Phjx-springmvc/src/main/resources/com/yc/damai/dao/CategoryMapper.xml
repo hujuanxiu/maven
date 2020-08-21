@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  <!-- namespace是当前接口的命名空间 -->
+<mapper namespace="com.yc.damai.dao.DmCategoryMapper">
+
+
+<resultMap type="com.yc.damai.po.DmCategory" id="rmdo">
+  <!-- 一对一的关联查询
+  select用于指定完成关联查询的sql的id==>命名空间+sql.id
+   -->
+  <association property="dmProduct" column="pid"
+      select="com.yc.damai.dao.DmProductMapper.selectByCid"></association>
+  
+  
+  </resultMap>
+  
+  <select id="selectById" resultMap="rmdo">
+    select * from dm_category where id=#{id}
+  </select>
+  
+<!-- 
+fetchType="lazy"  惰性加载
+ -->
+<resultMap type="com.yc.damai.po.DmCategory" id="rmdc">
+   <collection property="children" column="id"
+      select="selectChildren" fetchType="lazy">   
+   </collection>
+
+</resultMap>
+
+<select id="selectChildren" resultMap="rmdc">
+    select * from dm_category where pid=#{id}
+</select>
+
+
+
+
+
+
+<!-- id是该select标签的唯一标识
+     resultType表示返回的结果映射到的实体类的类
+   -->
+  
+  <select id="selectAll" resultMap="rmdc">
+    select * from dm_category
+  </select>
+  
+  <!-- 参数传入格式：#{实体对象的属性名} -->
+  <insert id="insert">
+    insert into dm_category values(null,#{cname},#{pid})
+  </insert>
+  
+  <insert id="update">
+  update dm_category set cname=#{cname},pid=#{pid}
+  where id=#{id}
+  </insert>
+  
+  
+  <insert id="delete">
+  delete from dm_category where id=#{id}
+  </insert>
+  
+  
+  
+</mapper>

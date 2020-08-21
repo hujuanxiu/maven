@@ -45,6 +45,10 @@ public interface DmProductMapper {
 	List<DmProduct> selectByOrder(int id);
 	
 	
+	@Select("select * from dm_product where is_hot=1 order by id desc limit 0,10")
+	List<DmProduct> selectByHot();
+	
+	
 	List<DmProduct> selectByObj(DmProduct dp);
 	
 	List<DmProduct> selectByCid(DmCategory dc);
