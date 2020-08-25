@@ -102,9 +102,9 @@
         <div class="more"><a href="">PHP</a><a href="">JavaScript</a><a href="">EmpireCMS</a><a href="">Apache</a><a href="">MySQL</a></div>
       </div>
       
-      <article th:each="a : ${alist}" class="excerpt excerpt-1"><a class="focus" href="article.html" title=""><img class="thumb" data-original="images/excerpt.jpg" src="images/excerpt.jpg" alt=""></a>
+      <article th:each="a : ${alist}" class="excerpt excerpt-1 post"><a class="focus" th:href="'article?id=' + ${a.id}" title=""><img class="thumb" data-original="images/excerpt.jpg" src="images/excerpt.jpg" alt=""></a>
         <header><a class="cat" href="program" th:text="${a.categoryid}">后端程序<i></i></a>
-          <h2><a href="article.html" title=""  th:text="${a.title}">php如何判断一个日期的格式是否正确</a></h2>
+          <h2><a th:href="'article?id=' + ${a.id}" title=""  th:text="${a.title}">php如何判断一个日期的格式是否正确</a></h2>
         </header>
         <p class="meta">
           <time class="time"><i class="glyphicon glyphicon-time" ></i><span th:text="${a.createtime}"> 2016-1-4 10:29:39</span> </time>
