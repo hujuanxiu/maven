@@ -24,12 +24,12 @@ public class LoginInterceptor implements HandlerInterceptor{
 					if(accept.startsWith("application/json")) {
 						//ajax请求
 						response.setContentType("application/json;charset=utf-8");
-						response.getWriter().append("{code:0,msg:'请先登录系统'}");
+						response.getWriter().append("{\"code\":0,\"msg\":\"请先登录!\"}");
 					}else {
 						//页面跳转请求
 						response.setContentType("text/html;charset=utf-8");
 						response.sendRedirect("/?mustLogin");
-						returnJson(response,"{\"code\":0,\"msg\":\"请先登录!\"}");
+						response.getWriter().append("{\"code\":0,\"msg\":\"请先登录!\"}");
 					}
 					return false;
 				}
@@ -38,21 +38,7 @@ public class LoginInterceptor implements HandlerInterceptor{
 	}
 	
 	
-	/*返回客户端数据*/
-    private void returnJson(HttpServletResponse response, String json) throws Exception{
-        PrintWriter writer = null;
-        response.setCharacterEncoding("UTF-8");
-        response.setContentType("text/html; charset=utf-8");
-        try {
-            writer = response.getWriter();
-            writer.print(json);
- 
-        } catch (IOException e) {
-        } finally {
-            if (writer != null)
-                writer.close();
-        }
-    }
+	
 
 	
 

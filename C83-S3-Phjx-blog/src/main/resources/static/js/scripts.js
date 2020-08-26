@@ -170,7 +170,7 @@ $(window).scroll(function () {
 };*/
 
 /*自定义右键菜单*/
-(function () {
+/*(function () {
     var oMenu = document.getElementById("rightClickMenu");
     var aLi = oMenu.getElementsByTagName("li");
 	//加载后隐藏自定义右键菜单
@@ -204,7 +204,7 @@ $(window).scroll(function () {
         $(oMenu).fadeOut(100);
 		//oMenu.style.display = "none"
     }
-})();
+})();*/
 
 /*禁止键盘操作*/
 /*document.onkeydown=function(event){
@@ -215,7 +215,7 @@ $(window).scroll(function () {
 };*/ 
 
 /*文章评论*/
-$(function(){
+/*$(function(){
 	$("#comment-submit").click(function(){
 		var commentContent = $("#comment-textarea");
 		var commentButton = $("#comment-submit");
@@ -241,16 +241,16 @@ $(function(){
 				promptText.text('评论成功!');
 			    commentContent.val(null);
 				$(".commentlist").fadeIn(300);
-				/*$(".commentlist").append();*/
+				$(".commentlist").append();
 				commentButton.attr('disabled',false);
 				commentButton.removeClass('disabled');
 			}
 		});
-		/*$(".commentlist").append(replace_em(commentContent.val()));*/
+		$(".commentlist").append(replace_em(commentContent.val()));
 		promptBox.fadeOut(100);
 		return false;
 	});
-});
+});*/
 //对文章内容进行替换
 function replace_em(str){
 	str = str.replace(/\</g,'&lt;');

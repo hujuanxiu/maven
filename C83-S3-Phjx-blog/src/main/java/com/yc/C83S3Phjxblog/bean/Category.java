@@ -11,6 +11,7 @@ public class Category implements java.io.Serializable{
 	private String name;
 	private String sort;
 	private String introduce;
+	
 	public Integer getId() {
 		return id;
 	}
