@@ -7,3 +7,10 @@ spring:
       username: root
       password: hjx199836  
       driver-class-Name: com.mysql.cj.jdbc.Driver
+      
+      
+logging:
+   level:
+     com:
+        yc:
+          C83S3Phjxblog: debug
