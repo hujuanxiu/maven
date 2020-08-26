@@ -25,10 +25,9 @@ public class IndexAction {
 		model.addAttribute("alist", am.selectByNew());
 		return "index";
 	}
-	@GetMapping("article")
-	public String article(int id,Model model) {
-		model.addAttribute("article", am.selectById(id));
-		return "article";
-	}
+	
+	
+	
+	
 
 }

@@ -2,18 +2,30 @@ package com.yc.C83S3Phjxblog.bean;
 
 import java.sql.Timestamp;
 
+import javax.validation.constraints.Min;
+import javax.validation.constraints.NotEmpty;
+
+import org.hibernate.validator.constraints.Length;
+
 
 public class Article implements java.io.Serializable{
 
 	 
 	private static final long serialVersionUID = 1L;
 	private Integer id ;
-	private String author; 
+	private String author;
+	
+	@NotEmpty(message = "标题不能为空")
 	private String title;
+	@NotEmpty
 	private String content; 
 	private String keywords; 
 	private String description; 
+	
+	@Min(1)
 	private Integer categoryid; 
+	
+	@NotEmpty
 	private String label; 
 	private String titleimgs; 
 	private String status; 
