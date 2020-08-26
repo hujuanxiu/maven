@@ -33,6 +33,16 @@ public class Article implements java.io.Serializable{
 	private Integer readcnt; 
 	private Integer agreecnt;
 	
+	private Category category;
+	
+	
+	
+	public Category getCategory() {
+		return category;
+	}
+	public void setCategory(Category category) {
+		this.category = category;
+	}
 	public Integer getId() {
 		return id;
 	}
